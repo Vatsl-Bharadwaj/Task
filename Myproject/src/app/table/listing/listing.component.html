@@ -1,0 +1,85 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row mb-5">
+        <div class="col-sm-6">
+            <h3 class="main-heading mt-5">Task</h3>
+        </div>
+    </div>
+
+    <div class="row mt-5 d-flex justify-content">
+        <div class="col-sm-6">
+            <div class="d-flex justify-content text-left">
+            <!-- <ng-select  [items]="jsonData"
+                bindLabel="email"
+                bindValue="id">
+            </ng-select> -->
+
+            <!-- <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" id="dropdown">
+                  Dropdown button
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark" for="dropdown">
+                  <li><a class="dropdown-item active" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Separated link</a></li>
+                </ul>
+              </div> -->
+              <select name="dropdown" id="reason" aria-placeholder="Reasons" class="ellipses">
+                <option selected>Reasons</option>
+                <option *ngFor="let data of jsonData" [value]="data.id">{{data.reason}}</option>
+              </select>
+
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-4">
+                    <input class="form-control " type="text" placeholder="search">
+                </div>
+                <div class="col-sm-2">
+                    <button class="btn btn-danger w-20">Search</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- Table view -->
+    <div class="table-body search mt-5 text-center">
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Created Date</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">SSP ID</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let data of jsonData">
+                <tr>
+                    <td scope="col">{{data.createdDate}}</td>
+                    <td scope="col">{{data.ssP_Name}}</td>
+                    <td scope="col">{{data.ssP_ID}}</td>
+                    <td scope="col">{{data.status}}</td>
+                    <td scope="col">
+                        <button class="btn btn-primary active">view activity</button>
+                    </td>
+                </tr>
+            </tbody>
+            <!-- <ng-template #emptyBodyRow>
+            <tbody>
+              <tr>
+                <td colspan="3" class="text-center">No Data Available</td>
+              </tr>
+            </tbody>
+          </ng-template> -->
+        </table>
+    </div>
+
+
+</div>
